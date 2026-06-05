@@ -1,0 +1,20 @@
+{
+  "name": "Abdulluh.X Bundle",
+  "version": "1.0.0",
+  "description": "مجموعة وحدات وأدوات مخصصة لتطبيق Forward",
+  "author": "Abdulluh.X",
+  "homepage": "https://github.com/InchStudio/ForwardWidgets",
+  "icon": "assets/icon.png",
+  "modules": [
+    {
+      "id": "my_first_module",
+      "name": "وحدة السكربت الأول",
+      "script": "scripts/module1.js"
+    },
+    {
+      "id": "my_second_module",
+      "name": "وحدة السكربت الثاني",
+      "script": "scripts/module2.js"
+    }
+  ]
+}

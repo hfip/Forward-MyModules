@@ -7,14 +7,9 @@
   "icon": "assets/icon.png",
   "modules": [
     {
-      "id": "my_first_module",
-      "name": "وحدة السكربت الأول",
+      "id": "forward.abdulluhx.elcinema.guide",
+      "name": "القنوات العربية 📺",
       "script": "scripts/module1.js"
-    },
-    {
-      "id": "my_second_module",
-      "name": "وحدة السكربت الثاني",
-      "script": "scripts/module2.js"
     }
   ]
 }

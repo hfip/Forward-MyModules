@@ -1,0 +1,16 @@
+{
+  "name": "Abdulluh.X Bundle",
+  "version": "1.0.0",
+  "description": "مجموعة وحدات وأدوات مخصصة لتطبيق Forward",
+  "author": "Abdulluh.X",
+  "homepage": "https://github.com/hfip/Forward-MyModules",
+  "icon": "https://raw.githubusercontent.com/hfip/Forward-MyModules/main/assets/icon.png",
+  "modules": [
+    {
+      "id": "forward.abdulluhx.elcinema.guide",
+      "name": "القنوات العربية 📺",
+      "description": "قوائم المسلسلات والافلام العربية",
+      "script": "https://raw.githubusercontent.com/hfip/Forward-MyModules/main/scripts/module1.js"
+    }
+  ]
+}

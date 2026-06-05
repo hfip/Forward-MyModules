@@ -24,18 +24,13 @@ WidgetMetadata = {
   description: "قوائم المسلسلات والافلام العربية",
   author: "Abdulluh.X",
   telegram: "@Abdulluh_X",
-  site: "https://github.com/InchStudio/ForwardWidgets",
+  site: "https://github.com/hfip/Forward-MyModules",
   modules: [
-    // 🔥 أقسام السينما والتصنيفات العامة
     { id: "nowShowing", title: "🎬 يعرض حالياً في السينما", functionName: "getNowShowing", params: [{ name: "page", title: "الصفحة", type: "page" }] },
     { id: "comingSoon", title: "📅 يعرض قريباً", functionName: "getComingSoon", params: [{ name: "page", title: "الصفحة", type: "page" }] },
-    
-    // 🌙 مواسم ومسلسلات رمضان (2026 - 2025 - 2024)
     { id: "ramadan2026", title: "🌙 مسلسلات رمضان 2026", functionName: "getRamadan2026", params: [{ name: "page", title: "الصفحة", type: "page" }] },
     { id: "ramadan2025", title: "🍂 مسلسلات رمضان 2025", functionName: "getRamadan2025", params: [{ name: "page", title: "الصفحة", type: "page" }] },
     { id: "ramadan2024", title: "⏳ مسلسلات رمضان 2024", functionName: "getRamadan2024", params: [{ name: "page", title: "الصفحة", type: "page" }] },
-
-    // 📡 قائمة فرز القنوات التلفزيونية المرتبة
     {
       id: "tvChannelsGuide",
       title: "📡 دليل جدول القنوات التلفزيونية",
@@ -46,7 +41,6 @@ WidgetMetadata = {
           title: "اختر القناة",
           type: "enumeration",
           enumOptions: [
-            // ترتيب شبكة MBC
             { title: "إم بي سي 1 (MBC 1) 📺", value: "1127" },
             { title: "إم بي سي 2 (MBC 2) 🎬", value: "1128" },
             { title: "إم بي سي 3 (MBC 3) 👶", value: "1241" },
@@ -57,7 +51,6 @@ WidgetMetadata = {
             { title: "إم بي سي مصر (MBC Masr) 🇪🇬", value: "1239" },
             { title: "إم بي سي مصر دراما (MBC Masr Drama) 🎬", value: "1399" },
             { title: "إم بي سي العراق (MBC Iraq) 🇮🇶", value: "1340" },
-            // القنوات السعودية والوثائقية
             { title: "قناة السعودية 🇸🇦", value: "1352" },
             { title: "قناة ذكريات 🕰️", value: "1366" },
             { title: "ناشيونال جيوجرافيك (National Geographic) 🧠", value: "1275" }
@@ -69,95 +62,90 @@ WidgetMetadata = {
   ]
 };
 
-// ═══════════════════════════════════════════════════════════════════
-// 🧠 محرك الفرز وجلب ميتاداتا الدليل والتصنيفات
-// ═══════════════════════════════════════════════════════════════════
+// الدالة الرئيسية المطلوبة من تطبيق Forward للتشغيل واكتشاف الأداة
+async function main(config) {
+  return WidgetMetadata;
+}
 
 async function smartDiscover(type, params) { 
   params.language = TMDB_LANG;
   return await fetchData(`discover/${type}`, params, type); 
 }
 
-// 1. يعرض حالياً في السينما
 async function getNowShowing(params) {
   return await fetchData(`movie/now_playing?language=${TMDB_LANG}`, { page: params.page }, "movie");
 }
 
-// 2. يعرض قريباً
 async function getComingSoon(params) {
   return await fetchData(`movie/upcoming?language=${TMDB_LANG}`, { page: params.page }, "movie");
 }
 
-// 3. مسلسلات رمضان 2026
 async function getRamadan2026(params) {
   let query = { sort_by: "popularity.desc", with_original_language: "ar", "first_air_date.gte": "2026-01-01", "first_air_date.lte": "2026-05-01", page: params.page };
   return await smartDiscover("tv", query);
 }
 
-// 4. مسلسلات رمضان 2025
 async function getRamadan2025(params) {
   let query = { sort_by: "popularity.desc", with_original_language: "ar", "first_air_date.gte": "2025-01-01", "first_air_date.lte": "2025-05-01", page: params.page };
   return await smartDiscover("tv", query);
 }
 
-// 5. مسلسلات رمضان 2024
 async function getRamadan2024(params) {
   let query = { sort_by: "popularity.desc", with_original_language: "ar", "first_air_date.gte": "2024-01-01", "first_air_date.lte": "2024-04-01", page: params.page };
   return await smartDiscover("tv", query);
 }
 
-// 6. تصفية القنوات التلفزيونية
 async function getChannelSchedule(params) {
   const channelId = params.channel_id || "1127";
   const page = params.page || 1;
   let query = { page: page, sort_by: "popularity.desc" };
 
   switch (channelId) {
-    case "1127": // MBC 1
+    case "1127":
       query.with_original_language = "ar";
       return await smartDiscover("tv", query);
-    case "1128": // MBC 2
+    case "1128":
       query.with_original_language = "en";
       query["vote_average.gte"] = 6.0;
       return await smartDiscover("movie", query);
-    case "1241": // MBC 3
-      query.with_genres = "16|10762"; // أنميشن وأطفال
+    case "1241":
+      query.with_genres = "16|10762";
       return await smartDiscover("tv", query);
-    case "1129": // MBC 4
+    case "1129":
       query.with_original_language = "en|tr";
       return await smartDiscover("tv", query);
-    case "1132": // MBC Max
+    case "1132":
       query.with_original_language = "en";
       return await smartDiscover("movie", query);
-    case "1194": // MBC Drama
+    case "1194":
       query.with_original_language = "ar";
       return await smartDiscover("tv", query);
-    case "1259": // MBC Bollywood
+    case "1259":
       query.with_original_language = "hi|te|ta";
       return await smartDiscover("tv", query);
-    case "1239": // MBC مصر
+    case "1239":
       query.with_original_language = "ar";
       query.with_origin_country = "EG";
       return await smartDiscover("tv", query);
-    case "1399": // MBC مصر دراما
+    case "1399":
       query.with_original_language = "ar";
       query.with_origin_country = "EG";
-      query.with_genres = "18"; // دراما مصرية حصرية
+      query.with_genres = "18";
       return await smartDiscover("tv", query);
-    case "1340": // MBC العراق
+    case "1340":
       query.with_original_language = "ar";
       query.with_origin_country = "IQ|SY|EG";
       return await smartDiscover("tv", query);
-    case "1352": // قناة السعودية
+    case "1352":
       query.with_original_language = "ar";
       query.with_origin_country = "SA";
       return await smartDiscover("tv", query);
-    case "1366": // قناة ذكريات
+    case "1366":
       query.with_original_language = "ar";
-      query.release_date_options = "lte:2015-01-01"; // جلب كلاسيكيات قديمة تناسب ثيم ذكريات
+      query.release_date_options = "lte:2015-01-01";
       return await smartDiscover("tv", query);
-    case "1275": // ناشيونال جيوجرافيك
-      query.with_genres = "99"; // وثائقيات فقط
+    case "1275":
+      query.with_genres = "99";
       return await smartDiscover("movie", query);
     default:
       query.with_original_language = "ar";
@@ -165,9 +153,6 @@ async function getChannelSchedule(params) {
   }
 }
 
-// ════════════════════════════════════════════════════════════════
-// جلب ومعالجة البيانات وبناء المظهر الأنيق النظيف بدون اسم القناة
-// ════════════════════════════════════════════════════════════════
 async function fetchData(api, params, forceMediaType) {
   params.language = TMDB_LANG;
   try {
@@ -180,10 +165,7 @@ async function fetchData(api, params, forceMediaType) {
         mediaType = item.title ? "movie" : "tv";
       }
       
-      // الاكتفاء باسم المسلسل أو الفيلم فقط ليكون المظهر مريح ونظيف بدون إضافات جانبية اسم القناة
       const finalTitle = item.title ?? item.name;
-
-      // توليد علامة وقت عشوائية ذكية متناسقة لثيم جدول عروض القنوات
       const randomHour = Math.floor(Math.random() * 12) + 1;
       const amPm = Math.random() > 0.5 ? "مساءً" : "صباحاً";
       const timeTag = `🕒 موعد العرض التقديري: الساعة ${randomHour}:00 ${amPm}`;

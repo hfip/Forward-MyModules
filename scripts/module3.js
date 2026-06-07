@@ -13,7 +13,7 @@ var WidgetMetadata = {
   requiredVersion: "0.0.1",
   description: "تصفح أعمال أشهر ممثلي ومخرجي هوليوود — 54 شخصية في مكان واحد",
   author: "Abdulluh.X",
-  site: "https://t.me/plex_arab",
+  site: "https://github.com/hfip/Forward-MyModules",
   modules: [
     // 👩 الممثلات
     {
@@ -202,7 +202,7 @@ function formatResults(items, forceType) {
     const isGem = item.vote_average >= 8.0 && item.vote_count >= 1000;
     const title = (isGem ? "👑 " : "") + (item.title || item.name || "بدون عنوان");
     return {
-      // صياغة المعرف القياسية لـ TMDB المطلوبة في التوثيق (تدمج النوع مع الرقم)
+      // ⚠️ صياغة المعرف القياسية لـ TMDB المطلوبة في التوثيق (تدمج النوع مع الرقم)
       id: `${mediaType}.${item.id}`,
       type: "tmdb",
       title,

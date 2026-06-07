@@ -9,9 +9,27 @@
       "title": "القنوات العربية 📺",
       "description": "قوائم المسلسلات والافلام العربية",
       "requiredVersion": "0.0.1",
-      "version": "1.5.1",
+      "version": "1.5.2",
       "author": "Abdulluh.X",
       "url": "https://raw.githubusercontent.com/hfip/Forward-MyModules/main/scripts/module1.js"
+    },
+    {
+      "id": "forward.abdulluhx.shahid.vip.official",
+      "title": "شاهد VIP 🎬",
+      "description": "المحرك السينمائي الأقوى: تصفح ميتاداتا مسلسلات وأفلام شاهد بالبوسترات الأصلية والروابط الحقيقية",
+      "requiredVersion": "0.0.1",
+      "version": "1.5.2",
+      "author": "Abdulluh.X",
+      "url": "https://raw.githubusercontent.com/hfip/Forward-MyModules/main/scripts/module2.js"
+    },
+    {
+      "id": "forward.abdulluhx.stars.directors.official",
+      "title": "⭐ نجوم هوليوود والمخرجون",
+      "description": "تصفح أعمال أشهر ممثلي ومخرجي هوليوود — 54 شخصية في مكان واحد",
+      "requiredVersion": "0.0.1",
+      "version": "1.5.2",
+      "author": "Abdulluh.X",
+      "url": "https://raw.githubusercontent.com/hfip/Forward-MyModules/main/scripts/module3.js"
     }
   ]
 }

@@ -11,7 +11,7 @@ var WidgetMetadata = {
     title: "القنوات العربية 📺",
     description: "قوائم المسلسلات والافلام العربية",
     author: "Abdulluh.X",
-    site: "https://github.com/hfip/Forward-MyModules",
+    site: "https://t.me/plex_arab",
     version: "1.5.0",
     requiredVersion: "0.0.1",
     modules: [

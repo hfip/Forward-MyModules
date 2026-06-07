@@ -7,18 +7,18 @@
     {
       "id": "forward.abdulluhx.elcinema.guide.official",
       "title": "القنوات العربية 📺",
-      "description": "قوائم المسلسلات والافلام العربية",
+      "description": "قوائم المسلسلات والافلام العربية بنظام الفرز والترتيب الحركي المتكامل",
       "requiredVersion": "0.0.1",
-      "version": "1.5.2",
+      "version": "1.6.0",
       "author": "Abdulluh.X",
       "url": "https://raw.githubusercontent.com/hfip/Forward-MyModules/main/scripts/module1.js"
     },
     {
       "id": "forward.abdulluhx.shahid.vip.official",
       "title": "شاهد VIP 🎬",
-      "description": "المحرك السينمائي الأقوى: تصفح ميتاداتا مسلسلات وأفلام شاهد بالبوسترات الأصلية والروابط الحقيقية",
+      "description": "تصفح ميتاداتا مسلسلات وأفلام شاهد بالبوسترات الأصلية",
       "requiredVersion": "0.0.1",
-      "version": "1.5.2",
+      "version": "1.6.0",
       "author": "Abdulluh.X",
       "url": "https://raw.githubusercontent.com/hfip/Forward-MyModules/main/scripts/module2.js"
     },
@@ -27,7 +27,7 @@
       "title": "⭐ نجوم هوليوود والمخرجون",
       "description": "تصفح أعمال أشهر ممثلي ومخرجي هوليوود — 54 شخصية في مكان واحد",
       "requiredVersion": "0.0.1",
-      "version": "1.5.2",
+      "version": "1.6.0",
       "author": "Abdulluh.X",
       "url": "https://raw.githubusercontent.com/hfip/Forward-MyModules/main/scripts/module3.js"
     }

@@ -10,8 +10,8 @@ var WidgetMetadata = {
   id: "forward.abdulluhx.shahid.vip.official",
   title: "شاهد VIP 🎬",
   version: "1.0.0",
-  requiredVersion: "0.0.1",
-  description: "المحرك السينمائي الأقوى: تصفح ميتاداتا مسلسلات وأفلام شاهد بالبوسترات الأصلية والروابط الحقيقية المتوافقة مع خوادم api3.shahid.net.",
+  requiredVersion: "0.1.1",
+  description: "المحرك السينمائي الأقوى: تصفح ميتاداتا مسلسلات وأفلام شاهد بالبوسترات الأصلية.",
   author: "Abdulluh.X",
   site: "https://t.me/plex_arab",
   modules: [

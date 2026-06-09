@@ -9,7 +9,7 @@
       "title": "القنوات العربية 📺",
       "description": "قوائم المسلسلات والافلام العربية بنظام الفرز والترتيب الحركي المتكامل",
       "requiredVersion": "0.0.1",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "author": "Abdulluh.X",
       "url": "https://raw.githubusercontent.com/hfip/Forward-MyModules/main/scripts/module1.js"
     },
@@ -18,7 +18,7 @@
       "title": "شاهد VIP 🎬",
       "description": "تصفح ميتاداتا مسلسلات وأفلام شاهد بالبوسترات الأصلية والروابط الحقيقية",
       "requiredVersion": "0.0.1",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "author": "Abdulluh.X",
       "url": "https://raw.githubusercontent.com/hfip/Forward-MyModules/main/scripts/module2.js"
     },
@@ -27,7 +27,7 @@
       "title": "⭐ نجوم هوليوود والمخرجون",
       "description": "تصفح أعمال أشهر ممثلي ومخرجي هوليوود — 54 شخصية في مكان واحد",
       "requiredVersion": "0.0.1",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "author": "Abdulluh.X",
       "url": "https://raw.githubusercontent.com/hfip/Forward-MyModules/main/scripts/module3.js"
     },
@@ -36,7 +36,7 @@
       "title": "السينما العالمية 🎬",
       "description": "المحرك السينمائي الأقوى: تصفح لانهائي يدمج جميع الأقسام العالمية والعربية من تطوير المطور Dex.",
       "requiredVersion": "0.0.1",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "author": "Dex",
       "url": "https://raw.githubusercontent.com/hfip/Forward-MyModules/main/scripts/module4.js"
     },
@@ -45,7 +45,7 @@
       "title": "بوابة القنوات الحية 📡",
       "description": "تشغيل قنوات البث المباشر التلفزيونية عبر روابط M3U أو خوادم Xtream API من تطوير المطور Dex.",
       "requiredVersion": "0.0.1",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "author": "Dex",
       "url": "https://raw.githubusercontent.com/hfip/Forward-MyModules/main/scripts/module5.js"
     },
@@ -54,9 +54,18 @@
       "title": "مكتبة الأفلام والمسلسلات 🎥",
       "description": "جلب وتصفح مكتبة الأفلام والمسلسلات (VOD) من خوادم Xtream Codes من تطوير المطور Dex.",
       "requiredVersion": "0.0.1",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "author": "Dex",
       "url": "https://raw.githubusercontent.com/hfip/Forward-MyModules/main/scripts/module6.js"
+    },
+    {
+      "id": "forward.abdulluhx.tmdb.arabic.standalone",
+      "title": "TMDB بالعربي 🎬",
+      "description": "بيانات الافلام والمسلسلات من موقع TMDB بالعربي",
+      "requiredVersion": "0.0.1",
+      "version": "1.8.0",
+      "author": "Abdulluh.X",
+      "url": "https://raw.githubusercontent.com/hfip/Forward-MyModules/main/scripts/module7.js"
     }
   ]
 }

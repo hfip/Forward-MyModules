@@ -1,0 +1,95 @@
+// ==========================================
+// Project: Forward Custom Modules Bundle
+// Module Name: الاستديوهات العالمية 🎬
+// Developer: Abdulluh.X // Telegram: @Abdulluh_X
+// Community: https://t.me/plex_arab
+// All rights reserved © 2026
+// ==========================================
+
+var WidgetMetadata = {
+  id: "forward.abdulluhx.global.studios.v1",
+  title: "الاستديوهات العالمية 🎬",
+  version: "1.0.0",
+  requiredVersion: "0.0.1",
+  description: "تصفح أفلام ومسلسلات المنصات والاستوديوهات العالمية.",
+  author: "Abdulluh.X",
+  site: "https://t.me/plex_arab",
+  modules: [
+    // === منصات البث الرقمي (أفلام) ===
+    { id: "netflix_movies", title: "🔴 نتفليكس - أفلام (Netflix)", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getNetflixMovies" },
+    { id: "apple_movies", title: "🍏 آبل تي في - أفلام (+Apple TV)", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getAppleMovies" },
+    { id: "disney_movies", title: "🔵 ديزني بلس - أفلام (+Disney)", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getDisneyMovies" },
+    { id: "amazon_movies", title: "🟠 أمازون برايم - أفلام (Amazon)", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getAmazonMovies" },
+    { id: "max_movies", title: "🟣 ماكس - أفلام (Max)", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getMaxMovies" },
+
+    // === منصات البث الرقمي (مسلسلات) ===
+    { id: "netflix_shows", title: "🔴 نتفليكس - مسلسلات (Netflix)", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getNetflixShows" },
+    { id: "apple_shows", title: "🍏 آبل تي في - مسلسلات (+Apple TV)", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getAppleShows" },
+    { id: "disney_shows", title: "🔵 ديزني بلس - مسلسلات (+Disney)", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getDisneyShows" },
+
+    // === استوديوهات الإنتاج العالمية ===
+    { id: "pixar", title: "🎨 استوديوهات بيكسار (Pixar)", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getPixar" },
+    { id: "dreamworks", title: "🌙 دريم ووركس (DreamWorks)", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getDreamworks" },
+    { id: "marvel", title: "🦸 استوديوهات مارفل (Marvel Studios)", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getMarvel" },
+    { id: "warnerBros", title: "⚡ وارنر براذرز (Warner Bros.)", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getWarnerBros" },
+    { id: "sonyColumbia", title: "🎬 استوديوهات كولومبيا وسوني", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getSonyColumbia" },
+    { id: "universal", title: "🦁 يونيفرسال بيكتشرز (Universal)", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getUniversal" },
+    { id: "paramount", title: "🎥 باراماونت بيكتشرز (Paramount)", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getParamount" },
+    { id: "a24", title: "🍿 السينما المستقلة (A24)", params: [{ name: "page", title: "الصفحة", type: "page" }], functionName: "getA24" }
+  ]
+};
+
+const TMDB_LANG = "ar-SA";
+
+// === دالات المنصات (أفلام) - تم إصلاح الفلترة بإضافة watch_region ===
+async function getNetflixMovies(page) { return await fetchData("discover/movie", { sort_by: "popularity.desc", with_watch_providers: "8", watch_region: "SA", page: page }, "movie"); }
+async function getAppleMovies(page) { return await fetchData("discover/movie", { sort_by: "popularity.desc", with_watch_providers: "350", watch_region: "SA", page: page }, "movie"); }
+async function getDisneyMovies(page) { return await fetchData("discover/movie", { sort_by: "popularity.desc", with_watch_providers: "337", watch_region: "SA", page: page }, "movie"); }
+async function getAmazonMovies(page) { return await fetchData("discover/movie", { sort_by: "popularity.desc", with_watch_providers: "9", watch_region: "SA", page: page }, "movie"); }
+async function getMaxMovies(page) { return await fetchData("discover/movie", { sort_by: "popularity.desc", with_watch_providers: "1899", watch_region: "SA", page: page }, "movie"); }
+
+// === دالات المنصات (مسلسلات) - تم إصلاح الفلترة بإضافة watch_region ===
+async function getNetflixShows(page) { return await fetchData("discover/tv", { sort_by: "popularity.desc", with_watch_providers: "8", watch_region: "SA", page: page }, "tv"); }
+async function getAppleShows(page) { return await fetchData("discover/tv", { sort_by: "popularity.desc", with_watch_providers: "350", watch_region: "SA", page: page }, "tv"); }
+async function getDisneyShows(page) { return await fetchData("discover/tv", { sort_by: "popularity.desc", with_watch_providers: "337", watch_region: "SA", page: page }, "tv"); }
+
+// === دالات الاستوديوهات (بقيت كما هي تماماً لأنها ممتازة وشغالة بنجاح) ===
+async function getPixar(page) { return await fetchData("discover/movie", { sort_by: "popularity.desc", with_companies: "3", page: page }, "movie"); }
+async function getDreamworks(page) { return await fetchData("discover/movie", { sort_by: "popularity.desc", with_companies: "521", page: page }, "movie"); }
+async function getMarvel(page) { return await fetchData("discover/movie", { sort_by: "popularity.desc", with_companies: "420", page: page }, "movie"); }
+async function getWarnerBros(page) { return await fetchData("discover/movie", { sort_by: "popularity.desc", with_companies: "174", page: page }, "movie"); }
+async function getSonyColumbia(page) { return await fetchData("discover/movie", { sort_by: "popularity.desc", with_companies: "5", page: page }, "movie"); }
+async function getUniversal(page) { return await fetchData("discover/movie", { sort_by: "popularity.desc", with_companies: "33", page: page }, "movie"); }
+async function getParamount(page) { return await fetchData("discover/movie", { sort_by: "popularity.desc", with_companies: "4", page: page }, "movie"); }
+async function getA24(page) { return await fetchData("discover/movie", { sort_by: "popularity.desc", with_companies: "41077", page: page }, "movie"); }
+
+// === دالة جلب الميتاداتا ومعالجتها بالمنطق المتوافق والمستقر ===
+async function fetchData(api, params, forceMediaType) {
+  params.language = TMDB_LANG;
+  // التكيف مع تمرير كائن الصفحة أو الرقم المباشر
+  if (params.page && typeof params.page === 'object') {
+    params.page = params.page.page || 1;
+  }
+  try {
+    const response = await Widget.tmdb.get(api, { params: params });
+    if (!response || !response.results) return [];
+    return response.results.map((item) => {
+      let mediaType = item.media_type || forceMediaType;
+      if (!mediaType || mediaType === "mixed") mediaType = item.title ? "movie" : "tv";
+      const rawDate = item.release_date ?? item.first_air_date;
+      return {
+        id: String(item.id),
+        tmdbId: item.id,
+        ids: { tmdb: item.id }, 
+        type: "tmdb", 
+        title: item.title ?? item.name,
+        description: `قصة العمل:\n${item.overview || "لا يوجد وصف متاح حالياً."}`,
+        releaseDate: rawDate, 
+        backdropPath: item.backdrop_path, 
+        posterPath: item.poster_path,
+        rating: item.vote_average ? item.vote_average.toFixed(1) : "N/A", 
+        mediaType: mediaType
+      };
+    });
+  } catch (error) { return []; }
+}

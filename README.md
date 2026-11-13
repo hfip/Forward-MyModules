@@ -35,4 +35,4 @@ Arabic-first modules for the **Forward** player: channel packs, widgets and meta
 
 ## License
 
-Not specified yet.
+MIT © 2026 Abdulluh.X (hfip) — see [LICENSE](LICENSE).
